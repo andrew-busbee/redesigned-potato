@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:5.7
+    container_name: ${DBCONTAINERNAME}
+    volumes:
+      - wordpress:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false" #Do not update with watchtower
+
+      
+  wordpress_loganbusbee:
+    depends_on:
+      - db
+    image: wordpress
+    ports:
+      - 8001:80
+    container_name: ${WPCONTAINERNAME}
+    volumes:
+      - db:/var/www/html
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false" #Do not update with watchtower
+      
+volumes:
+  wordpress:
+  db: 
