@@ -20,7 +20,7 @@ services:
       - db
     image: wordpress
     ports:
-      - 8001:80
+      - ${PORT}:80
     container_name: ${WPCONTAINERNAME}
     volumes:
       - ${WPPATH}/wpdata:/var/www/html
