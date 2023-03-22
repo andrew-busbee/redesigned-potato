@@ -11,12 +11,11 @@ services:
       PGID: ${PGID}
       TZ: America/Chicago
 
-      # Default Recipe Settings
       RECIPE_PUBLIC: 'true'
-      RECIPE_SHOW_NUTRITION: 'true'
+      RECIPE_SHOW_NUTRITION: 'false' #default true
       RECIPE_SHOW_ASSETS: 'true'
       RECIPE_LANDSCAPE_VIEW: 'true'
-      RECIPE_DISABLE_COMMENTS: 'true'
+      RECIPE_DISABLE_COMMENTS: 'true' #default false
       RECIPE_DISABLE_AMOUNT: 'false'
 
       # Gunicorn
