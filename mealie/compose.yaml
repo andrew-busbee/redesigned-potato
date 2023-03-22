@@ -5,7 +5,7 @@ services:
     image: hkotel/mealie:latest
     restart: always
     ports:
-      - ${port}:80
+      - ${PORT}:80
     environment:
       PUID: ${PUID}
       PGID: ${PGID}
