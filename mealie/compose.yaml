@@ -3,6 +3,8 @@ services:
   mealie:
     container_name: mealie
     image: hkotel/mealie:latest
+    volumes:
+      - ${PATH}:/app/data
     restart: always
     ports:
       - ${PORT}:80
@@ -22,5 +24,4 @@ services:
       # WEB_CONCURRENCY: 2
       # WORKERS_PER_CORE: 0.5
       # MAX_WORKERS: 8
-    volumes:
-      - ${PATH}:/app/data
+
