@@ -17,7 +17,6 @@ services:
       RECIPE_LANDSCAPE_VIEW: 'true'
       RECIPE_DISABLE_COMMENTS: 'true' #default false
       RECIPE_DISABLE_AMOUNT: 'false'
-      AUTO_BACKUP_ENABLED: 'true'
 
       # Gunicorn
       # WEB_CONCURRENCY: 2
