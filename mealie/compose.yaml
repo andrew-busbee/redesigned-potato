@@ -23,4 +23,7 @@ services:
       # WORKERS_PER_CORE: 0.5
       # MAX_WORKERS: 8
     volumes:
-      - ${PATH}/docker/mealie/data:/app/data
+      - mealie:/app/data
+
+volumes:
+  mealie:
