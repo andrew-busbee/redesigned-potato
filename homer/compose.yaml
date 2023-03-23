@@ -5,11 +5,12 @@ services:
     image: b4bz/homer:latest
     container_name: homer-${NAME}
     volumes:
-      - homer:/www/assets
+      # Make sure this folder is writeable by the user below before deploying the container
+      - /home/docker/homer/${NAME}:/www/assets
     ports:
       - ${PORT}:8080
-    user: 1000:1000 # default 1000:1000
+    user: 911:911 # default 1000:1000
     environment:
       - INIT_ASSETS=1 # default 1
-volumes:
-  homer:
+#volumes:
+#  homer:
