@@ -6,13 +6,13 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     ports:
-      - "${PORT}:53/tcp"
-      - "${PORT}:53/udp"
-      - "${HTTPPORT}:80/tcp"
+      - ${PORT}":53/tcp"
+      - ${PORT}":53/udp"
+      - ${HTTPPORT}":80/tcp"
     environment:
       TZ: 'America/Chicago'
       WEBPASSWORD: ${PASSWORD} 'set a secure password here or it will be random'
     volumes:
-      - '${PATH}/etc-pihole:/etc/pihole'
-      - '${PATH}/etc-dnsmasq.d:/etc/dnsmasq.d'
+      - ${PATH}'/etc-pihole:/etc/pihole'
+      - ${PATH}'/etc-dnsmasq.d:/etc/dnsmasq.d'
     restart: always # unless-stopped
