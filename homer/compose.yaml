@@ -9,7 +9,7 @@ services:
       - /home/docker/homer/${NAME}:/www/assets
     ports:
       - ${PORT}:8080
-    user: 911:911 # default 1000:1000
+    user: ${ID1}:${ID2} # default 1000:1000
     environment:
       - INIT_ASSETS=1 # default 1
 #volumes:
