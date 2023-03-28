@@ -4,6 +4,7 @@ services:
   homer:
     image: b4bz/homer:latest
     container_name: homer-${NAME}
+    restart: always
     volumes:
       # Make sure this folder is writeable by the user below before deploying the container
       - /home/docker/homer/${NAME}:/www/assets
