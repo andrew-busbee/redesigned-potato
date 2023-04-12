@@ -8,4 +8,4 @@ services:
       - ${HOMARRPATH}/configs:/app/data/configs
       - ${HOMARRPATH}/icons:/app/public/icons
     ports:
-      - '${PORT}:7575'
+      - ${HOMARRPORT}:7575
