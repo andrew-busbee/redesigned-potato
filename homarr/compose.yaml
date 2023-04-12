@@ -9,3 +9,6 @@ services:
       - ${HOMARRPATH}/icons:/app/public/icons
     ports:
       - ${HOMARRPORT}:7575
+    environment:
+      - TZ=${TIMEZONE}
+      - PASSWORD=${HOMARRPASSWORD}
