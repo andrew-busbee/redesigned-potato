@@ -1,0 +1,11 @@
+version: '3'
+services:
+  homarr:
+    container_name: homarr-${SUBNAME}
+    image: ghcr.io/ajnart/homarr:latest
+    restart: always
+    volumes:
+      - ${HOMARRPATH}/configs:/app/data/configs
+      - ${HOMARRPATH}/icons:/app/public/icons
+    ports:
+      - '${PORT}:7575'
