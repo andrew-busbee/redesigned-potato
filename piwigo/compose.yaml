@@ -1,0 +1,32 @@
+version: "2.1"
+services:
+  piwigo:
+    image: ghcr.io/linuxserver/piwigo
+    container_name: Piwigo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bucharest
+    volumes:
+      - piwigo:/config
+      - /mnt/photo:/gallery
+    ports:
+      - 8633:80
+    restart: always
+  db:
+    image: mysql
+    container_name: Piwigo-DB
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${ROOTPWD}
+      MYSQL_DATABASE: ${DBNAME}
+      MYSQL_USER: ${DBUSER}
+      MYSQL_PASSWORD: ${DBPWD}
+    volumes:
+      - piwigo-data:/var/lib/mysql
+      
+volumes:
+  piwigo-config:
+    name: piwigo-config  #Name of existing volume     
+  piwigo-data:
+    name: piwigo-data  #Name of existing volume 
