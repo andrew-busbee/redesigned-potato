@@ -8,7 +8,7 @@ services:
       - PGID=${MYPGID}
       - TZ=Europe/Bucharest
     volumes:
-      - piwigo-config:/config
+      - /home/andrew/docker/piwigo/config:/config
       - photos:/gallery
     ports:
       - ${PIWIGOPORT}:80
@@ -23,15 +23,9 @@ services:
       MYSQL_USER: ${DBUSER}
       MYSQL_PASSWORD: ${DBPWD}
     volumes:
-      - piwigo-data:/var/lib/mysql
+      - /home/andrew/docker/piwigo/db:/var/lib/mysql
       
 volumes:
-  piwigo-config:
-    external: true
-    name: piwigo-config  #Name of existing volume     
-  piwigo-data:
-    external: true
-    name: piwigo-data  #Name of existing volume 
   photos:
     external: true
     name: photos  #Name of existing volume
