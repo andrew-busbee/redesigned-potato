@@ -27,8 +27,11 @@ services:
       
 volumes:
   piwigo-config:
+    external: true
     name: piwigo-config  #Name of existing volume     
   piwigo-data:
+    external: true
     name: piwigo-data  #Name of existing volume 
   photos:
+    external: true
     name: photos  #Name of existing volume
