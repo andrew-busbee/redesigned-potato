@@ -9,9 +9,9 @@ services:
       - TZ=Europe/Bucharest
     volumes:
       - piwigo-config:/config
-      - /mnt/photo:/gallery
+      - photos:/gallery
     ports:
-      - 8633:80
+      - 8003:80
     restart: always
   db:
     image: mysql
@@ -30,3 +30,5 @@ volumes:
     name: piwigo-config  #Name of existing volume     
   piwigo-data:
     name: piwigo-data  #Name of existing volume 
+  photos:
+    name: photos  #Name of existing volume
