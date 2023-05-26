@@ -7,7 +7,7 @@ services:
     volumes:
       - uptime-kuma:/app/data
     ports:
-      - 8005:3001 
+      - 8010:3001 
     restart: always
 
 volumes:
