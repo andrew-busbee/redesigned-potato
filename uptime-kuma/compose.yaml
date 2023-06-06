@@ -5,10 +5,11 @@ services:
     image: louislam/uptime-kuma:1
     container_name: uptime-kuma
     volumes:
-      - uptime-kuma:/app/data
+      #- uptime-kuma:/app/data
+      - ${DATAPATH}:/app/data
     ports:
       - 8010:3001 
     restart: always
 
-volumes:
-  uptime-kuma:
+#volumes:
+#  uptime-kuma:
