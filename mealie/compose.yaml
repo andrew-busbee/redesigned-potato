@@ -23,7 +23,8 @@ services:
       # WORKERS_PER_CORE: 0.5
       # MAX_WORKERS: 8
     volumes:
-      - mealie:/app/data
-
-volumes:
-  mealie:
+      #- mealie:/app/data
+      - ${DATAPATH}:/app/data
+      
+#volumes:
+#  mealie:
