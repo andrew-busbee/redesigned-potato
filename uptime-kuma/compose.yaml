@@ -4,6 +4,8 @@ services:
   uptime-kuma:
     image: louislam/uptime-kuma:latest # was just 1
     container_name: uptime-kuma
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false" #Do not update with watchtower    
     volumes:
       #- uptime-kuma:/app/data
       - ${DATAPATH}:/app/data
