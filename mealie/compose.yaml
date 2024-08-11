@@ -3,7 +3,7 @@ services:
   mealie:
     container_name: mealie
     #image: hkotel/mealie:latest
-    image: hkotel/mealie:v1.0.0
+    image: hkotel/mealie:latest
     restart: always
     ports:
       - ${PORT}:80
